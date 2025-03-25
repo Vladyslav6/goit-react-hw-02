@@ -1,9 +1,9 @@
+import Description from "./components/Description/Description";
+
 function App() {
   return (
     <>
-      <div>
-        <p>Start hw</p>
-      </div>
+      <Description />
     </>
   );
 }
