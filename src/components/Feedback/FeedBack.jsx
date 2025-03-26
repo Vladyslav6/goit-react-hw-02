@@ -1,10 +1,10 @@
-const FeedBack = () => {
+const FeedBack = ({ Good, Neutral, Bad }) => {
   return (
     <>
       <div>
-        <p>Good:0</p>
-        <p>Neutral:0</p>
-        <p>Bad:0</p>
+        <p>Good:{Good}</p>
+        <p>Neutral:{Neutral}</p>
+        <p>Bad:{Bad}</p>
       </div>
     </>
   );
