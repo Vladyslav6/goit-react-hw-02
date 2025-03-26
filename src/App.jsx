@@ -20,64 +20,46 @@ function App() {
 //   setTestOptions2(TestOptions2+1)
 //   console.log(TestOptions2)
 // }
-const [TestOptions, setTestOptions] = useState({
+const [allOptions, setAllOptions] = useState({
   good: 0,
   neutral: 0,
   bad: 0,
 });
 
-// const HandlClickOptions = option =>{
-//   // setTestOptions({
-//   //   ...TestOptions,
-//   //   [option]: TestOptions[option] + 1,
-//   // });
-//   if (option === 'good') {
-//     setTestOptions({
-//         ...TestOptions,
-//         good: TestOptions.good + 1,
-//       });
-//     }
-//     if (option === 'neutral') {
-//       setTestOptions({
-//           ...TestOptions,
-//           neutral: TestOptions.neutral + 1,
-//         });
-//       }
-//       if (option === 'bad') {
-//         setTestOptions({
-//             ...TestOptions,
-//             bad: TestOptions.bad + 1,
-//           });
-//         }
-//     // if (option === 'macos') {
-//     //   setVotingData({
-//     //     ...votingData,
-//     //     macos: votingData.macos + 1,
-//     //   });
-//     // }
-//     // if (option === 'linux') {
-//     //   setVotingData({
-//     //     ...votingData,
-//     //     linux: votingData.linux + 1,
-//     //   });
-//     // }
-
-// // TestOptions.good=TestOptions.good+1
-// // setTestOptions2(TestOptions2+1)
-// // console.log(TestOptions2)
-
-// console.log(option)
-
-// console.log(TestOptions)
-// }
+const updateFeedback = feedbackType =>{
+  // setTestOptions({
+  //   ...TestOptions,
+  //   [allOptions]: TestOptions[allOptions] + 1,
+  // });
+  
+  if (feedbackType === 'good') {
+    setAllOptions({
+        ...allOptions,
+        good: allOptions.good + 1,
+      });
+    }
+    if (feedbackType === 'neutral') {
+      setAllOptions({
+          ...allOptions,
+          neutral: allOptions.neutral + 1,
+        });
+      }
+      if (feedbackType === 'bad') {
+        setAllOptions({
+            ...allOptions,
+            bad: allOptions.bad + 1,
+          });
+        }
+}
   return (
     <>
       <Description />
-      <Options TestOptions={TestOptions} setTestOptions={setTestOptions} />
+      {/* <Options allOptions={allOptions} setAllOptions={setAllOptions} /> */}
+      <Options updatePropFeedback={updateFeedback}/>
       <FeedBack
-        Good={TestOptions.good}
-        Neutral={TestOptions.neutral}
-        Bad={TestOptions.bad}
+        Good={allOptions.good}
+        Neutral={allOptions.neutral}
+        Bad={allOptions.bad}
       />
     </>
   );
