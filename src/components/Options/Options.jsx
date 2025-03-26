@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-const Options = ({ TestOptions, TesdtOptions }) => {
-  console.log(TestOptions);
+const Options = ({ TestOptions, TesdtOptions,testFunk }) => {
+  // console.log(TestOptions);
   const testArgs = { ...TestOptions };
-  console.log(testArgs);
+  // console.log(testArgs);
   const [Clicks, setClicks] = useState(0);
   const handlGoodClicks = () => {
     setClicks(Clicks + 1);
@@ -12,7 +12,7 @@ const Options = ({ TestOptions, TesdtOptions }) => {
   return (
     <>
       <div>
-        <button onClick={handlGoodClicks}>Good{Clicks}</button>
+        <button onClick={testFunk}>Good{Clicks}</button>
         <button>Neutral</button>
         <button>Bad</button>
       </div>
