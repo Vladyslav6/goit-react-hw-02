@@ -12,9 +12,9 @@ const Options = ({ TestOptions, TesdtOptions,testFunk }) => {
   return (
     <>
       <div>
-        <button onClick={testFunk}>Good{Clicks}</button>
-        <button>Neutral</button>
-        <button>Bad</button>
+        <button onClick={()=>testFunk("good")}>Good</button>
+        <button onClick={()=>testFunk("neutral")}>Neutral</button>
+        <button onClick={()=>testFunk("bad")}>Bad</button>
       </div>
     </>
   );
