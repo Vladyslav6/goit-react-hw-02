@@ -26,54 +26,54 @@ const [TestOptions, setTestOptions] = useState({
   bad: 0,
 });
 
-const HandlClickOptions = option =>{
-  // setTestOptions({
-  //   ...TestOptions,
-  //   [option]: TestOptions[option] + 1,
-  // });
-  if (option === 'good') {
-    setTestOptions({
-        ...TestOptions,
-        good: TestOptions.good + 1,
-      });
-    }
-    if (option === 'neutral') {
-      setTestOptions({
-          ...TestOptions,
-          neutral: TestOptions.neutral + 1,
-        });
-      }
-      if (option === 'bad') {
-        setTestOptions({
-            ...TestOptions,
-            bad: TestOptions.bad + 1,
-          });
-        }
-    // if (option === 'macos') {
-    //   setVotingData({
-    //     ...votingData,
-    //     macos: votingData.macos + 1,
-    //   });
-    // }
-    // if (option === 'linux') {
-    //   setVotingData({
-    //     ...votingData,
-    //     linux: votingData.linux + 1,
-    //   });
-    // }
+// const HandlClickOptions = option =>{
+//   // setTestOptions({
+//   //   ...TestOptions,
+//   //   [option]: TestOptions[option] + 1,
+//   // });
+//   if (option === 'good') {
+//     setTestOptions({
+//         ...TestOptions,
+//         good: TestOptions.good + 1,
+//       });
+//     }
+//     if (option === 'neutral') {
+//       setTestOptions({
+//           ...TestOptions,
+//           neutral: TestOptions.neutral + 1,
+//         });
+//       }
+//       if (option === 'bad') {
+//         setTestOptions({
+//             ...TestOptions,
+//             bad: TestOptions.bad + 1,
+//           });
+//         }
+//     // if (option === 'macos') {
+//     //   setVotingData({
+//     //     ...votingData,
+//     //     macos: votingData.macos + 1,
+//     //   });
+//     // }
+//     // if (option === 'linux') {
+//     //   setVotingData({
+//     //     ...votingData,
+//     //     linux: votingData.linux + 1,
+//     //   });
+//     // }
 
-// TestOptions.good=TestOptions.good+1
-// setTestOptions2(TestOptions2+1)
-// console.log(TestOptions2)
+// // TestOptions.good=TestOptions.good+1
+// // setTestOptions2(TestOptions2+1)
+// // console.log(TestOptions2)
 
-console.log(option)
+// console.log(option)
 
-console.log(TestOptions)
-}
+// console.log(TestOptions)
+// }
   return (
     <>
       <Description />
-      <Options TestOptions={TestOptions} TesdtOptions={setTestOptions} testFunk={HandlClickOptions}/>
+      <Options TestOptions={TestOptions} setTestOptions={setTestOptions} />
       <FeedBack
         Good={TestOptions.good}
         Neutral={TestOptions.neutral}
