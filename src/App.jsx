@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Description from "./components/Description/Description";
 import FeedBack from "./components/Feedback/Feedback";
 import Options from "./components/Options/Options";
@@ -9,8 +9,22 @@ function App() {
     good: 0,
     neutral: 0,
     bad: 0,
-  });
+  })
+
+
   const totalFeedback = allOptions.good + allOptions.neutral + allOptions.bad;
+  
+  // const toJsonget = JSON.stringify({totalFeedback})
+//  console.log(Number(totalFeedback))
+// console.log(typeof toJsonget)
+//  console.log(typeof totalFeedback)
+//  console.log(typeof setAllOptions)
+
+
+  // console.log(JSON.parse(totalFeedback))
+//  useEffect(()=>{
+//   document.title=${"hi"}
+//  })
   const updateFeedback = (feedbackType) => {
     // setTestOptions({
     //   ...TestOptions,
