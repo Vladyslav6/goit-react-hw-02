@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const Options = ({ updatePropFeedback}) => {
+const Options = ({ updatePropFeedback, Total }) => {
   // const updateFeedback = feedbackType =>{
   //   // setTestOptions({
   //   //   ...TestOptions,
   //   //   [option]: TestOptions[option] + 1,
   //   // });
-    
+
   //   if (feedbackType === 'good') {
   //     setAllOptions({
   //         ...allOptions,
@@ -29,9 +29,14 @@ const Options = ({ updatePropFeedback}) => {
   return (
     <>
       <div>
-        <button onClick={()=>updatePropFeedback("good")}>Good</button>
-        <button onClick={()=>updatePropFeedback("neutral")}>Neutral</button>
-        <button onClick={()=>updatePropFeedback("bad")}>Bad</button>
+        <button onClick={() => updatePropFeedback("good")}>Good</button>
+        <button onClick={() => updatePropFeedback("neutral")}>Neutral</button>
+        <button onClick={() => updatePropFeedback("bad")}>Bad</button>
+        {Total >= 1 ? (
+          <button onClick={() => updatePropFeedback("Reset")}>Reset</button>
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );
