@@ -62,16 +62,13 @@ function App() {
     <>
       <Description />
       <Options updatePropFeedback={updateFeedback} Total={totalFeedback} />
-      {totalFeedback > 0 ? (
-        <FeedBack
-          Good={allOptions.good}
-          Neutral={allOptions.neutral}
-          Bad={allOptions.bad}
-          Total={totalFeedback}
-        />
-      ) : (
-        <Notification />
-      )}
+
+      <FeedBack
+        Good={allOptions.good}
+        Neutral={allOptions.neutral}
+        Bad={allOptions.bad}
+        Total={totalFeedback}
+      />
     </>
   );
 }
