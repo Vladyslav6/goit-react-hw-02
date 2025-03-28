@@ -2,7 +2,6 @@ import { use, useEffect, useState } from "react";
 import Description from "./components/Description/Description";
 import Options from "./components/Options/Options";
 import FeedBack from "./components/Feedback/FeedBack"
-
 import Notification from "./components/Notification/Notification";
 
 function App() {
