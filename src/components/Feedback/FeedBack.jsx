@@ -1,5 +1,5 @@
-const FeedBack = ({ Good, Neutral, Bad, Total }) => {
-  const PositiveOption = Math.round((Good / Total) * 100);
+const FeedBack = ({ Good, Neutral, Bad, Total,PositiveOpt }) => {
+ 
 
   return (
     <>
@@ -8,7 +8,7 @@ const FeedBack = ({ Good, Neutral, Bad, Total }) => {
         <p>Neutral:{Neutral}</p>
         <p>Bad:{Bad}</p>
         <p>Total:{Total}</p>
-        {PositiveOption >= 1 ? <p>Positive:{PositiveOption}%</p> : <></>}
+        {PositiveOpt >= 1 ? <p>Positive:{PositiveOpt}%</p> : <></>}
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Description from "./components/Description/Description";
 import Options from "./components/Options/Options";
 import FeedBack from "./components/Feedback/FeedBack"
@@ -18,13 +18,11 @@ function App() {
   });
 
   const totalFeedback = allOptions.good + allOptions.neutral + allOptions.bad;
+  const PositiveOption = Math.round((allOptions.good / totalFeedback) * 100);
 
-  useEffect(() => {
-    window.localStorage.setItem("setSaveObject", JSON.stringify(allOptions), [
-      allOptions,
-    ]);
-  });
-
+ useEffect(() => {
+    window.localStorage.setItem("setSaveObject", JSON.stringify(allOptions))}, [allOptions])
+  
   const updateFeedback = (feedbackType) => {
     setAllOptions({
       ...allOptions,
@@ -68,6 +66,7 @@ function App() {
           Neutral={allOptions.neutral}
           Bad={allOptions.bad}
           Total={totalFeedback}
+          PositiveOpt={PositiveOption}
         />
       ) : (
         <Notification />
