@@ -5,50 +5,53 @@ import Options from "./components/Options/Options";
 import Notification from "./components/Notification/Notification";
 
 function App() {
-  const [allOptions, setAllOptions] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  })
-
+  const [allOptions, setAllOptions] = useState(() => {
+    const ObjectSave = window.localStorage.getItem("setSaveObject");
+    if (ObjectSave !== null) {
+      return JSON.parse(ObjectSave);
+    }
+    return {
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    };
+  });
 
   const totalFeedback = allOptions.good + allOptions.neutral + allOptions.bad;
-  
-  // const toJsonget = JSON.stringify({totalFeedback})
-//  console.log(Number(totalFeedback))
-// console.log(typeof toJsonget)
-//  console.log(typeof totalFeedback)
-//  console.log(typeof setAllOptions)
 
-
-  // console.log(JSON.parse(totalFeedback))
-//  useEffect(()=>{
-//   document.title=${"hi"}
-//  })
+  useEffect(() => {
+    window.localStorage.setItem("setSaveObject", JSON.stringify(allOptions), [
+      allOptions,
+    ]);
+  });
+  //
+  //
+  //
+  //
   const updateFeedback = (feedbackType) => {
-    // setTestOptions({
-    //   ...TestOptions,
-    //   [allOptions]: TestOptions[allOptions] + 1,
-    // });
+    setAllOptions({
+      ...allOptions,
+      [feedbackType]: allOptions[feedbackType] + 1,
+    });
 
-    if (feedbackType === "good") {
-      setAllOptions({
-        ...allOptions,
-        good: allOptions.good + 1,
-      });
-    }
-    if (feedbackType === "neutral") {
-      setAllOptions({
-        ...allOptions,
-        neutral: allOptions.neutral + 1,
-      });
-    }
-    if (feedbackType === "bad") {
-      setAllOptions({
-        ...allOptions,
-        bad: allOptions.bad + 1,
-      });
-    }
+    // if (feedbackType === "good") {
+    //   setAllOptions({
+    //     ...allOptions,
+    //     good: allOptions.good + 1,
+    //   });
+    // }
+    // if (feedbackType === "neutral") {
+    //   setAllOptions({
+    //     ...allOptions,
+    //     neutral: allOptions.neutral + 1,
+    //   });
+    // }
+    // if (feedbackType === "bad") {
+    //   setAllOptions({
+    //     ...allOptions,
+    //     bad: allOptions.bad + 1,
+    //   });
+    // }
     if (feedbackType === "Reset") {
       setAllOptions({
         ...allOptions,
@@ -61,9 +64,7 @@ function App() {
   return (
     <>
       <Description />
-      {/* <Options allOptions={allOptions} setAllOptions={setAllOptions} /> */}
       <Options updatePropFeedback={updateFeedback} Total={totalFeedback} />
-
       {totalFeedback > 0 ? (
         <FeedBack
           Good={allOptions.good}
