@@ -24,10 +24,7 @@ function App() {
       allOptions,
     ]);
   });
-  //
-  //
-  //b
-  //
+
   const updateFeedback = (feedbackType) => {
     setAllOptions({
       ...allOptions,
