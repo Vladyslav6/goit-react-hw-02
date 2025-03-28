@@ -1,8 +1,8 @@
 import { use, useEffect, useState } from "react";
 import Description from "./components/Description/Description";
-import FeedBack from "./components/Feedback/Feedback";
 import Options from "./components/Options/Options";
 import Notification from "./components/Notification/Notification";
+import FeedBack from "./components/Feedback/Feedback";
 
 function App() {
   const [allOptions, setAllOptions] = useState(() => {
